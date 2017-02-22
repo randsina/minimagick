@@ -79,6 +79,7 @@ module MiniMagick
     # @return [MiniMagick::Image] The loaded image
     #
     def self.open(path_or_url, ext = nil)
+      path_or_url = path_or_url.to_s
       ext ||=
         if File.exist?(path_or_url)
           File.extname(path_or_url)
